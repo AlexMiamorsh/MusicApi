@@ -97,13 +97,9 @@ st.session_state["page"] = 1
 st.session_state["click_image"] = False
 
 with st.sidebar:
-    selected = option_menu(None, [i18n("Music Song Create"), i18n("Music Share Square"), i18n("Music Project Readme"),i18n("Visit Official WebSite")],icons=['music-note', 'music-note-beamed', 'music-note-list'], menu_icon="cast", default_index=0)
+    selected = option_menu(None, [i18n("Music Song Create"),i18n("Visit Official WebSite")],icons=['music-note'], menu_icon="cast", default_index=0)
     
-    if selected == i18n("Music Share Square"):
-        st.switch_page("pages/square.py")
-    elif selected == i18n("Music Project Readme"):
-        st.switch_page("pages/readme.py")
-    elif selected == i18n("Visit Official WebSite"):
+    if selected == i18n("Visit Official WebSite"):
         st.page_link("https://suno.com", label=i18n("Visit Official WebSite1"), icon="🌐")
         st.page_link("https://sunoapi.net", label=i18n("Visit Official WebSite2"), icon="🌐")
     # print(selected)
