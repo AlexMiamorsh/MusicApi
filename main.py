@@ -19,7 +19,6 @@ import sys
 sys.path.append(root_dir)
 import site
 site.addsitedir(root_dir)
-from streamlit_image_select import image_select
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -920,5 +919,3 @@ hide_streamlit_style1 = """
 """
 with col2:
     st.components.v1.html(hide_streamlit_style1, height=30)
-
-components.iframe("https://sunoapi.net/analytics.html", height=0)
