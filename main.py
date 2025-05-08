@@ -65,8 +65,8 @@ locales = load_locales()
 display_languages = []
 
 if 'Language' not in st.session_state:
-    st.session_state.selected_index = 1
-    st.session_state.Language = "DE"
+    st.session_state.selected_index = 0
+    st.session_state.Language = "EN"
 
 
 for i, code in enumerate(locales.keys()):
