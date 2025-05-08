@@ -19,6 +19,7 @@ import sys
 sys.path.append(root_dir)
 import site
 site.addsitedir(root_dir)
+from streamlit_image_select import image_select
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -64,8 +65,8 @@ locales = load_locales()
 display_languages = []
 
 if 'Language' not in st.session_state:
-    st.session_state.selected_index = 7
-    st.session_state.Language = "ZH"
+    st.session_state.selected_index = 0
+    st.session_state.Language = "DE"
 
 
 for i, code in enumerate(locales.keys()):
@@ -919,3 +920,5 @@ hide_streamlit_style1 = """
 """
 with col2:
     st.components.v1.html(hide_streamlit_style1, height=30)
+
+components.iframe("https://sunoapi.net/analytics.html", height=0)
