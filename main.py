@@ -108,15 +108,6 @@ with st.sidebar:
         st.page_link("https://sunoapi.net", label=i18n("Visit Official WebSite2"), icon="🌐")
     # print(selected)
 
-st.sidebar.image('https://sunoapi.net/images/wechat.jpg', caption=i18n("Join WeChat Group"))
-# st.sidebar.image('https://sunoapi.net/images/donate.jpg', caption=i18n("Buy me a Coffee"))
-st.sidebar.markdown(f'<div data-testid="stImageCaption" class="st-emotion-cache-1b0udgb e115fcil0" style="max-width: 100%;"> {i18n("Friendly Link")}</div>', unsafe_allow_html=True)
-result = suno_sqlite.query_many("select link,label,status from link where status=0 order by id")
-# print(result)
-# print("\n")
-if result is not None and len(result) > 0:
-    for row in result:
-        st.sidebar.page_link(row[0], label=row[1], icon="🌐")
 
 col2.title(i18n("Page Title"))
 
