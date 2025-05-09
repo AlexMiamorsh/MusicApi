@@ -413,7 +413,9 @@ with container.container():
             [] if st.session_state['tags_input']=="" else st.session_state['tags_input'].split(","),
             placeholder=i18n("Tags Placeholder"),
             help=i18n("Tags Desc"),
-            max_selections=4)
+            max_selections=8,
+            accept_new_options=True,
+            )
             st.session_state.Tags = ','.join(str(opts) for opts in options)
 
         # print(st.session_state.Tags)
@@ -446,7 +448,7 @@ with container.container():
         if st.session_state['continue_at'] and st.session_state['continue_clip_id']:
             Prompt = container.text_area(label=i18n("Prompt"), value=st.session_state['prompt_input'], placeholder=i18n("Extend Placeholder"), height=150, max_chars=3000, help=i18n("Prompt Desc"), key="change_prompt", on_change=change_prompt)
         else:
-            Prompt = container.text_area(label=i18n("Prompt"), value=st.session_state['prompt_input'], placeholder=i18n("Prompt Placeholder"), height=150, max_chars=3000, help=i18n("Prompt Desc"), key="change_prompt", on_change=change_prompt)
+            Prompt = container.text_area(label=i18n("Prompt"), value=st.session_state['prompt_input'], placeholder=i18n("Prompt Placeholder"), height=150, max_chars=3000 if st.session_state['model_name'] == "chirp-v3-5" else 5000, help=i18n("Prompt Desc"), key="change_prompt", on_change=change_prompt)
         st.session_state.Prompt = Prompt
         # print(st.session_state.Prompt)
     else:
